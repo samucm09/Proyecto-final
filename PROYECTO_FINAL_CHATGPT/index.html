@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentSmart | Alquiler inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="IMAGENES/Imagen2.png" alt="Logo">
+    </div>
+    <h1>RentSmart</h1>
+  </div>
+</header>
+
+<!-- LOGIN -->
+<div id="auth" class="card-auth">
+  <h2>Iniciar Sesión / Registro</h2>
+
+  <input type="text" id="username" placeholder="Usuario">
+  <input type="password" id="password" placeholder="Contraseña">
+
+  <button onclick="register()">Registrarse</button>
+  <button onclick="login()">Iniciar Sesión</button>
+</div>
+
+
+<!-- APP (OCULTA AL INICIO) -->
+<div id="main" class="hidden">
+
+  <div class="top-bar">
+  <h2>Productos</h2>
+
+  <div>
+    <span class="cart-icon">🛒 <span id="cart-count">0</span></span>
+    <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+  </div>
+</div>
+
+  <input type="text" id="search" placeholder="🔍 Buscar producto..." onkeyup="filtrarProductos()">
+
+  <div id="products"></div>
+
+  <div class="cart-container">
+    <h2>Carrito</h2>
+    <ul id="cart"></ul>
+    <h3 id="total">Total: $0</h3>
+    <button onclick="clearCart()">Vaciar carrito</button>
+  </div>
+
+</div>
+
+<div id="adminPanel" class="hidden">
+  <h2>Panel de Administrador</h2>
+
+  <input type="text" id="adminName" placeholder="Nombre del producto">
+  <input type="number" id="adminPrice" placeholder="Precio">
+  <input type="text" id="adminImg" placeholder="URL imagen">
+
+  <button onclick="adminAddProduct()">Agregar producto</button>
+
+  <h3>Lista de productos</h3>
+  <div id="adminProducts"></div>
+
+  <button onclick="verPendientes()">📦 Ver pendientes</button>
+  <button onclick="verHistorial()">📜 Ver historial</button>
+  <button onclick="logout()">Cerrar sesión</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
